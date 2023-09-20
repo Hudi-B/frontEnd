@@ -49,14 +49,31 @@ for (let x of fruits.keys()){ //lenght basically
     console.log(fruits[x])
 };
 
-function employee(name, jobtitle, born, salary = 200000){
-    this.name = name;
+function employee(fname, sname, jobtitle, born, salary = 200000){ //class like obj
+    this.name = sname + " " + fname;
     this.jobtitle = jobtitle;
     this.born = born;
     this.salary = salary;
 }
 
-const newEmployee = new employee("Jake", "GypsyKiller", 1999, 250000);
+const newEmployee = new employee("Jake", "Yeet", "GypsyKiller", 1999, 250000); //instantiation
 console.log(newEmployee);
-const newEmployee2 = new employee("Gazsi", "Csoves", 1899)
+const newEmployee2 = new employee("Gazsi", "Halasz", "Csoves", 1899)
 console.log(newEmployee2);
+
+const cheese = new Map([ //key, value
+    ["Cheddar", 2000],
+    ["Goat", 4000],
+    ["Fungi", 6000]
+]);
+console.log(cheese);
+cheese.set("Cheddar", 2500); //change
+cheese.set("Macedon", 9000); //add
+console.log(cheese);
+console.log(cheese.get("Cheddar")); //get value of key
+cheese.delete("Goat"); //delete key value pair
+console.log(cheese);
+console.log(cheese.has("Fungi")); //check if key exists
+//cheese.clear() clears Map
+console.log(typeof fruits) //check type
+console.log(cheese instanceof Map) //check if type
