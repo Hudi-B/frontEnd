@@ -44,3 +44,19 @@ console.table(oszaly);
 oszaly.Denes = {Tesi: 2,Magyar: 5,Matek: 1,} //add new
 
 console.table(oszaly);
+
+for (let x of fruits.keys()){ //lenght basically
+    console.log(fruits[x])
+};
+
+function employee(name, jobtitle, born, salary = 200000){
+    this.name = name;
+    this.jobtitle = jobtitle;
+    this.born = born;
+    this.salary = salary;
+}
+
+const newEmployee = new employee("Jake", "GypsyKiller", 1999, 250000);
+console.log(newEmployee);
+const newEmployee2 = new employee("Gazsi", "Csoves", 1899)
+console.log(newEmployee2);
