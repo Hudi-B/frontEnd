@@ -7,7 +7,13 @@ import Spinner from 'react-bootstrap/Spinner';
 const Pizzas = () => {
   const [isFetchPending, setFetchPending] = useState(false);
   const [data, setData] = useState([]);
-
+  const appStyles = {
+    backgroundColor: '#fd8100',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  };
   useEffect(() => {
     const fetchData = async () => {
       setFetchPending(true);
@@ -28,7 +34,7 @@ const Pizzas = () => {
     fetchData();
   }, []);
   return (
-    <div className='text-center'>
+    <div className='text-center px-5 py-5' style={appStyles}>
 
       <h1>Pizzák</h1>
 
@@ -48,7 +54,7 @@ const Pizzas = () => {
                 <Card.Body>
                   <Card.Title>{pizza.name}</Card.Title>
                   <Card.Text>
-                    {pizza.isGlutenFree ? 'Gluten mentes' : 'Nem gluten mentes'}
+                    {pizza.isGlutenFree ? 'Glutenmentes' : 'Nem glutenmentes'}
                   </Card.Text>
                 </Card.Body>
               </Card>
