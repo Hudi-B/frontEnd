@@ -8,7 +8,7 @@ const Pizzas = () => {
   const [isFetchPending, setFetchPending] = useState(false);
   const [data, setData] = useState([]);
   const appStyles = {
-    backgroundColor: '#fd8100',
+    backgroundColor: 'grey',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
