@@ -34,6 +34,15 @@ export function InstrumentListPage() {
                                     alt="hello world, ide kéne a képed!"
                                     src={instrument.imageURL ? instrument.imageURL : "https://via.placeholder.com/400x800"}
                                     />
+                                    <div className="m-2">
+                                        <NavLink key="del" to={"/delete-hangszer/" + instrument.id} className="btn btn-danger">
+                                            <i className="bi bi-trash"></i>
+                                        </NavLink>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <NavLink key="mod" to={"/mod-hangszer/" + instrument.id} className="btn btn-primary">
+                                            <i className="bi bi-pencil"></i>
+                                        </NavLink>
+                                    </div>
                                 </div>
                             </div></NavLink>
                         ))}
