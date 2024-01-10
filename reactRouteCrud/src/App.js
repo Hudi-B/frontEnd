@@ -4,7 +4,6 @@ import { InstrumentListPage } from "./InstrumentListPage";
 import { InstrumentSinglePage } from "./InstrumentSinglePage";
 import { InstrumentCreatePage } from "./InstrumentCreatePage";
 import { InstrumentModPage } from "./InstrumentModPage";
-import { InstrumentDeletePage } from "./InstrumentDeletePage";
 
 function App() {
  return (
@@ -31,7 +30,6 @@ function App() {
       <Route path="/hangszer/:hangszerId" element={ <InstrumentSinglePage /> } />
       <Route path="/uj-hangszer" element={ <InstrumentCreatePage /> } />
       <Route path="/mod-hangszer/:hangszerId" element={ <InstrumentModPage /> } />
-      <Route path="/delete-hangszer/:hangszerId" element={ <InstrumentDeletePage /> }/>
     </Routes>
   </Router>
  );

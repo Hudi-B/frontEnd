@@ -72,13 +72,13 @@ return (
                 .catch(console.log);
             }}
             >
-    <div className="form-group row pb-3">
+<div className="form-group row pb-3">
     <label className="col-sm-3 col-form-label">Név:</label>
 <div>
     <input type="text" name="name" className="form-control" defaultValue={instrument.name} onChange={modName} />
 </div>
 <div className="form-group row pb-3">
-    <label className="col-sm-3 col-form-label">Márka -szőlő:</label>
+    <label className="col-sm-3 col-form-label">Márka:</label>
 <div>
     <input type="text" name="brand" className="form-control" defaultValue={instrument.brand} onChange={modBrand} />
 </div>
