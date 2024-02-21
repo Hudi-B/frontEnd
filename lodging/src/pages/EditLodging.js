@@ -45,7 +45,7 @@ function EditLodging() {
     const handleAdd = async () => {
         try {
             const priceInt = parseInt(formData.price);
-            await axios.post('https://nodejs.sulla.hu/data', {
+            await axios.put(`https://nodejs.sulla.hu/data/${id}`, {
                 ...formData,
                 price: priceInt
             }, {
@@ -137,10 +137,10 @@ function EditLodging() {
                             />
                         </Stack>
                         <Stack direction="row" spacing={2} m={3}>
-                            <Button variant="outlined" onClick={handleAdd} startIcon={<AddIcon />}>
+                            <Button variant="contained" onClick={handleAdd} startIcon={<AddIcon />}>
                                 Edit
                             </Button>
-                            <Button variant="outlined" onClick={handleClear} startIcon={<DeleteIcon />} color="error">
+                            <Button variant="contained" onClick={handleClear} startIcon={<DeleteIcon />} color="error">
                                 Clear fields
                             </Button>
                         </Stack>

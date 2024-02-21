@@ -12,6 +12,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Stack from '@mui/material/Stack';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const style = {
     py: 0,
@@ -46,13 +47,14 @@ function Lodging() {
             .then(response => {
                 setLodgingData(response.data);
                 setIsLoading(false);
-                console.log(response.data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
                 setIsLoading(false);
             });
         }, [id]);
+
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
     return (
         <div>
@@ -97,14 +99,12 @@ function Lodging() {
                             </ListItem>
                         </List>
                         <Stack direction="row" spacing={2} m={3}>
-                            <Button variant="contained" onClick={() => handleDelete(id)} startIcon={<DeleteIcon />} color="error">
+                            <Button variant="contained" onClick={() => handleDelete(id)} startIcon={<DeleteIcon />} color="error" disabled={!isLoggedIn}>
                                 Delete
                             </Button>
-                            <Link to={`/lodging/edit/${id}`}>
-                                <Button variant="contained" startIcon={<EditIcon />}>
+                                <Button variant="contained" component={Link} to={`/lodging/edit/${id}`} startIcon={<EditIcon />} disabled={!isLoggedIn}>
                                     Edit
                                 </Button>
-                            </Link>
                         </Stack>
                     </Box>
                 )
