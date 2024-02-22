@@ -44,10 +44,10 @@ function App() {
               <Alert severity="info">Logging in...</Alert>
             ) : (
               data.map((item) => (
-                <Card key={item.id} variant="outlined">
+                <Card key={item.id} variant="outlined" sx={{ mt: 2 }}>
                   <CardContent>
                     <h3>{item.name}</h3>
-                    <p>{item.price}</p>
+                    <p>{item.price} ft</p>
                   </CardContent>
                 </Card>
               ))
